@@ -12,7 +12,6 @@ public class Main {
 
 		ArrayList<Modulo> listaModulos = new ArrayList<Modulo>();
 		
-		//Recorremos los módulos
         try {
             File myObjMod = new File("./assets/files/modulos.txt");
             Scanner myReaderMod = new Scanner(myObjMod);
@@ -20,10 +19,8 @@ public class Main {
                 String data = myReaderMod.nextLine();
                 String[] lineaModulo = data.split("&");
 
-                //obtenemos todos los alumnos del modulo
                 ArrayList<Alumno> alumnosModulo= buscarAlumnosEnModulo(Integer.parseInt(lineaModulo[0]));
 
-                //Añadimos el objeto modulo con sus alumnos
                 listaModulos.add(new Modulo(Integer.parseInt(lineaModulo[0]),lineaModulo[1]
                         ,Integer.parseInt(lineaModulo[2])
                         ,Integer.parseInt(lineaModulo[3]), lineaModulo[4],alumnosModulo));
@@ -34,7 +31,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        //Imprimimos los módulos y sus alumnos
+       
         imprimirListaModulos(listaModulos);   
 		
 		
