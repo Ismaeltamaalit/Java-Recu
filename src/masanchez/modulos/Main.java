@@ -13,10 +13,10 @@ public class Main {
 		ArrayList<Modulo> listaModulos = new ArrayList<Modulo>();
 		
         try {
-            File myObjMod = new File("./assets/files/modulos.txt");
-            Scanner myReaderMod = new Scanner(myObjMod);
-            while (myReaderMod.hasNextLine()) {
-                String data = myReaderMod.nextLine();
+            File file = new File("modulos.txt");
+            Scanner scReader = new Scanner(file);
+            while (scReader.hasNextLine()) {
+                String data = scReader.nextLine();
                 String[] lineaModulo = data.split("&");
 
                 ArrayList<Alumno> alumnosModulo= buscarAlumnosEnModulo(Integer.parseInt(lineaModulo[0]));
@@ -25,7 +25,7 @@ public class Main {
                         ,Integer.parseInt(lineaModulo[2])
                         ,Integer.parseInt(lineaModulo[3]), lineaModulo[4],alumnosModulo));
             }
-            myReaderMod.close();
+            scReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -43,17 +43,17 @@ public class Main {
 		ArrayList<Alumno> alumnosEnModulo=new ArrayList<>();
 		
 		try {
-            File myObj = new File("./assets/files/modulo_alumno.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
+            File fileAM = new File("modulo_alumno.txt");
+            Scanner scReader = new Scanner(fileAM);
+            while (scReader.hasNextLine()) {
+                String data = scReader.nextLine();
                 String[] linea = data.split(",");
                     if (Integer.parseInt(linea[0])==modulo) {
                         Alumno alumnoActual=recuperarAlumno(Integer.parseInt(linea[1]));
                         alumnosEnModulo.add(alumnoActual);
                     }
             }
-            myReader.close();
+            scReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -70,7 +70,7 @@ public class Main {
 		boolean salir = false;
 		
 		try {
-            File myObjAlum = new File("./assets/files/alumnos.txt");
+            File myObjAlum = new File("alumnos.txt");
             Scanner myReader = new Scanner(myObjAlum);
             while (myReader.hasNextLine() && !salir) {
                 String data = myReader.nextLine();
