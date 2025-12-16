@@ -7,7 +7,7 @@ public class PruebaSimple {
         System.out.println("--- Añadiendo elementos ---");
         miLista.añadir("Manzana");
         miLista.añadir("Pera");
-        miLista.añadir("Plátano"); // Aquí la lista crecerá porque el tamaño inicial era 2
+        miLista.añadir("Plátano"); 
 
         System.out.println("\n--- Contenido de la lista ---");
         for (int i = 0; i < miLista.tamaño(); i++) {
@@ -15,6 +15,6 @@ public class PruebaSimple {
         }
 
         System.out.println("\n--- Probando errores ---");
-        System.out.println(miLista.obtener(10)); // Índice que no existe
+        System.out.println(miLista.obtener(10)); 
     }
 }
