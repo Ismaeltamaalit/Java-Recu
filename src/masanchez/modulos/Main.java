@@ -97,20 +97,12 @@ public class Main {
 	
     
 	public static void imprimirListaModulos(ArrayList<Modulo> listaModulos) {
-        
-		for(int i=0; i<listaModulos.size(); i++) {
-           
-			System.out.println(listaModulos.get(i).toString());
-			
+        for (Modulo modulo : listaModulos) {
+            System.out.println(modulo);
             System.out.println("\tAlumnos en módulo: ");
-            
-            for(int j=0;j<listaModulos.get(i).getAlumnos().size();j++){
-                
-            	Alumno alumnoActual =listaModulos.get(i).getAlumnos().get(j);
-            	            	
-            	System.out.println("\t"+ alumnoActual.toString());
+            for (Alumno alumno : modulo.getAlumnos()) {
+                System.out.println("\t" + alumno);
             }
-            
         }
     }
     
