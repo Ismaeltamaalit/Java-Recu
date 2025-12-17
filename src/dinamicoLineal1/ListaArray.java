@@ -36,6 +36,29 @@ public class ListaArray {
         elementos = nuevoArray;
         System.out.println("...Lista llena. Aumentando espacio a: " + elementos.length);
     }
+    
+    public void eliminar(int indice) {
+        if (indice < 0 || indice >= contador) {
+            System.out.println("Error: Índice no válido");
+            return;
+        }
+        for (int i = indice; i < contador - 1; i++) {
+            elementos[i] = elementos[i + 1];
+        }
+        elementos[contador - 1] = null;
+        contador--;
+    }
+    
+    
+    public int buscar(Object obj) {
+        for (int i = 0; i < contador; i++) {
+            
+            if (elementos[i].equals(obj)) {
+                return i; 
+            }
+        }
+        return -1; 
+    }
 
     
     public int tamaño() {
