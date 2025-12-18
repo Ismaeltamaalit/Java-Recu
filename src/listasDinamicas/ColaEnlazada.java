@@ -1,4 +1,4 @@
-package tdas_de_puta_mierda_hijos_de_puta;
+ package listasDinamicas;
 
 public class ColaEnlazada {
     private Nodo primero;
