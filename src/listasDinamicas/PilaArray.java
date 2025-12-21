@@ -61,7 +61,9 @@ public class PilaArray {
     private void comprobarLlenado() {
         if (numElementos == arrayElementos.length) {
             Object[] arrayAmpliado = new Object[arrayElementos.length * 2];
-            System.arraycopy(arrayElementos, 0, arrayAmpliado, 0, numElementos);
+            for (int i = 0; i < arrayElementos.length; i++) {
+                arrayAmpliado[i] = arrayElementos[i];
+            }
             arrayElementos = arrayAmpliado;
         }
     }

@@ -33,11 +33,7 @@ public class PilaEnlazada {
     }
 
     public boolean isEmpty() {
-        if (cima == null) {
-            return true;
-        } else {
-            return false;
-        }
+        return cima == null;
     }
 
     class Nodo {

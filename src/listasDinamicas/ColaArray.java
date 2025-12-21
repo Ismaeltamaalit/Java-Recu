@@ -15,25 +15,25 @@ public class ColaArray {
 
     
     public void offer(Object elemento) {
-        comprobarLlenado(); // Asegura el crecimiento dinámico
+        comprobarLlenado(); 
         arrayElementos[numElementos] = elemento;
         numElementos++;
     }
 
     
     public Object poll() {
-        if (isEmpty()) {
-            return null;
-        }
+        if (isEmpty()) return null;
 
-       
         Object cabeza = arrayElementos[0];
 
-        
-        System.arraycopy(arrayElementos, 1, arrayElementos, 0, numElementos - 1);
+        for (int i = 1; i < numElementos; i++) {
+            arrayElementos[i - 1] = arrayElementos[i];
+        }
 
         
         arrayElementos[numElementos - 1] = null;
+
+        
         numElementos--;
 
         return cabeza;

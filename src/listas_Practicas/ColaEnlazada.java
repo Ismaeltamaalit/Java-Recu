@@ -12,7 +12,7 @@ public class ColaEnlazada {
 		numElementos=0;
 	}
 	
-	public void enqueue(Object dato) {
+	public void encolar(Object dato) {
 		Nodo nuevo=new Nodo(dato);
 		if(primero==null) {
 			primero=nuevo;
