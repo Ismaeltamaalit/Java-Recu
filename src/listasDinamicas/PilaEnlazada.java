@@ -25,11 +25,19 @@ public class PilaEnlazada {
     }
 
     public Object peek() {
-        return (cima != null) ? cima.dato : null;
+        if (cima != null) {
+            return cima.dato;
+        } else {
+            return null;
+        }
     }
 
     public boolean isEmpty() {
-        return cima == null;
+        if (cima == null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     class Nodo {
