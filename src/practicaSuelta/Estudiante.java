@@ -5,14 +5,13 @@ public class Estudiante extends Persona {
     private String nre;
     private double notaMedia;
 
-    // Constructor
     public Estudiante(String nombre, String apellidos, String nre, double notaMedia) {
         super(nombre, apellidos);
         this.nre = nre;
         this.notaMedia = notaMedia;
     }
 
-    // SOBRECARGA DE MÉTODO
+    // SOBRECARGA DE MÉTODOS
     public void calcularNota(double n1, double n2) {
         notaMedia = (n1 + n2) / 2;
     }
@@ -21,7 +20,7 @@ public class Estudiante extends Persona {
         notaMedia = (n1 + n2 + n3) / 3;
     }
 
-    // Implementación método abstracto
+    // Implementación del método abstracto
     @Override
     public double calcularDato() {
         return notaMedia;
